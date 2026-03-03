@@ -1,0 +1,263 @@
+:root {
+  --acf-main: #006ba0;
+  --acf-secondary: #f37c31;
+  --acf-ink: #12354a;
+  --acf-bg: #f4f8fb;
+  --acf-surface: #ffffff;
+  --acf-line: #d9e7f0;
+  --acf-radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+  background: var(--acf-bg);
+  color: var(--acf-ink);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+code,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  z-index: 99;
+  background: #fff;
+  border: 1px solid var(--acf-main);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.container {
+  width: min(1100px, calc(100% - 28px));
+  margin-inline: auto;
+}
+
+.site-header {
+  background: linear-gradient(180deg, rgba(0,107,160,.12), rgba(0,107,160,0));
+  padding: 38px 0 24px;
+}
+
+.site-kicker {
+  margin: 0;
+  font-weight: 700;
+  color: var(--acf-secondary);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .78rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  margin-top: 8px;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  color: var(--acf-main);
+}
+
+.site-summary {
+  margin: 12px 0 0;
+  max-width: 70ch;
+  color: #456579;
+}
+
+main {
+  padding: 8px 0 36px;
+  display: grid;
+  gap: 14px;
+}
+
+.card {
+  background: var(--acf-surface);
+  border: 1px solid var(--acf-line);
+  border-radius: var(--acf-radius);
+  padding: 18px;
+  box-shadow: 0 10px 24px rgba(0, 71, 108, 0.06);
+}
+
+.section-head {
+  margin-bottom: 14px;
+}
+
+.section-head h2 {
+  color: var(--acf-main);
+  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+}
+
+.section-head p {
+  margin: 6px 0 0;
+  color: #5d7a8d;
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.logo-frame {
+  border: 1px dashed var(--acf-line);
+  border-radius: 12px;
+  min-height: 180px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-frame-light {
+  background: #fff;
+}
+
+.logo-frame-dark {
+  background: #0f3f59;
+}
+
+.logo-missing {
+  margin: 0;
+  color: #6d8493;
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.swatch {
+  border: 1px solid var(--acf-line);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.swatch-chip {
+  height: 88px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.08);
+  margin-bottom: 8px;
+}
+
+.swatch h3 {
+  font-size: 1rem;
+}
+
+.swatch p {
+  margin: 4px 0 8px;
+  color: #4b697c;
+  font-weight: 700;
+}
+
+.swatch-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.type-name {
+  margin: 0;
+  font-weight: 700;
+}
+
+.type-sample {
+  margin: 8px 0 0;
+  color: #29495f;
+}
+
+.type-heavy { font-weight: 900; font-size: 1.15rem; }
+.type-mid { font-weight: 700; font-size: 1.02rem; }
+.type-regular { font-weight: 400; }
+
+.actions-row {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: 1px solid transparent;
+  background: var(--acf-main);
+  color: #fff;
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: .92rem;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: #005581;
+}
+
+.btn.btn-small {
+  padding: 7px 10px;
+  font-size: .82rem;
+}
+
+pre {
+  margin: 0;
+  background: #f5f9fc;
+  border: 1px solid var(--acf-line);
+  border-radius: 10px;
+  padding: 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.snippet-block + .snippet-block {
+  margin-top: 12px;
+}
+
+.download-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.site-footer {
+  padding: 10px 0 22px;
+}
+
+.site-footer p {
+  margin: 0;
+  text-align: center;
+  color: #5b7383;
+}
+
+@media (max-width: 760px) {
+  .logo-grid,
+  .swatches {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Athlete Connections Foundation Brand Guide</title>
+  <style>
+    :root {
+      --deep-blue: #006ba0;
+      --orange: #f37c31;
+      --charcoal: #1c1f1e;
+      --bone-white: #f6f3ee;
+      --green: #2f7a57;
+      --canvas: #ffffff;
+      --muted: #667085;
+      --line: #d9dde3;
+      --radius: 14px;
+      --shadow: 0 1px 2px rgba(16, 24, 40, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      color: var(--charcoal);
+      background: linear-gradient(180deg, #fbfdff 0%, #ffffff 28rem);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: saturate(180%) blur(10px);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .brand-lockup {
+      min-width: 180px;
+    }
+
+    .brand-name {
+      margin: 0;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      color: var(--deep-blue);
+      font-weight: 700;
+    }
+
+    .brand-tagline {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+      max-width: 35ch;
+    }
+
+    .toc {
+      display: flex;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .toc a {
+      font-size: 0.92rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: #374151;
+    }
+
+    .toc a:hover {
+      background: #eef6fb;
+      color: var(--deep-blue);
+    }
+
+    .toc a:focus-visible,
+    button:focus-visible,
+    .click-chip:focus-visible,
+    .logo-preview button:focus-visible {
+      outline: 3px solid rgba(0, 107, 160, 0.35);
+      outline-offset: 2px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.2rem 1rem 4rem;
+    }
+
+    section {
+      scroll-margin-top: 6rem;
+      padding: 1.1rem 0 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      line-height: 1.15;
+      color: #111827;
+    }
+
+    h2 {
+      font-size: clamp(1.35rem, 1rem + 1.2vw, 1.9rem);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-intro {
+      margin-top: 0;
+      color: #4b5563;
+      max-width: 68ch;
+    }
+
+    .overview-grid,
+    .logo-grid,
+    .color-grid,
+    .type-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .overview-grid {
+      grid-template-columns: 1.3fr 1fr;
+    }
+
+    .logo-grid,
+    .color-grid,
+    .type-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--canvas);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+      min-height: 100%;
+    }
+
+    .muted {
+      color: #6b7280;
+    }
+
+    .checkerboard {
+      border-radius: 12px;
+      border: 1px solid #d0d7de;
+      background-color: #fff;
+      background-image:
+        linear-gradient(45deg, #eceff4 25%, transparent 25%),
+        linear-gradient(-45deg, #eceff4 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #eceff4 75%),
+        linear-gradient(-45deg, transparent 75%, #eceff4 75%);
+      background-size: 24px 24px;
+      background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+      padding: 1rem;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-preview {
+      cursor: pointer;
+      border: 0;
+      background: transparent;
+      width: 100%;
+      padding: 0;
+    }
+
+    .logo-preview img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      display: block;
+    }
+
+    .file-label {
+      display: inline-block;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.82rem;
+      margin: 0.75rem 0;
+      color: #374151;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      padding: 0.22rem 0.6rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: 1px solid transparent;
+      border-radius: 10px;
+      padding: 0.48rem 0.72rem;
+      font: inherit;
+      cursor: pointer;
+      color: #0b1324;
+      background: #ecf3f8;
+      transition: transform 0.08s ease, background-color 0.2s ease;
+    }
+
+    button:hover {
+      background: #dfedf7;
+    }
+
+    button:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primary {
+      background: var(--deep-blue);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #005984;
+    }
+
+    .swatch {
+      border-radius: 10px;
+      height: 68px;
+      margin-bottom: 0.8rem;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .color-meta {
+      margin: 0.15rem 0;
+    }
+
+    .click-chip {
+      border: 1px solid #d1d5db;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.65rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background: #f9fafb;
+      color: #111827;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .usage-rules {
+      margin: 1rem 0 0;
+      padding-left: 1.1rem;
+    }
+
+    .usage-rules li {
+      margin: 0.3rem 0;
+    }
+
+    .type-sample {
+      margin: 0.25rem 0 0;
+    }
+
+    .h1 {
+      font-size: clamp(2rem, 1.4rem + 2.3vw, 3rem);
+      font-weight: 700;
+    }
+
+    .h2 {
+      font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem);
+      font-weight: 700;
+    }
+
+    .h3 {
+      font-size: clamp(1.28rem, 1.05rem + 1vw, 1.7rem);
+      font-weight: 700;
+    }
+
+    .body {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .caption {
+      font-size: 0.86rem;
+      font-weight: 400;
+      color: #4b5563;
+    }
+
+    .layout-example {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem;
+      background: #fcfdff;
+      margin-top: 0.8rem;
+      display: grid;
+      grid-template-columns: 6px 1fr;
+      gap: 0.85rem;
+      align-items: center;
+      max-width: 550px;
+    }
+
+    .layout-example .divider {
+      width: 2px;
+      height: 72px;
+      background: var(--deep-blue);
+      border-radius: 999px;
+      justify-self: center;
+    }
+
+    .voice-card {
+      border-left: 4px solid var(--orange);
+      background: #fffaf5;
+    }
+
+    .toast {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      background: #0f172a;
+      color: #fff;
+      padding: 0.62rem 0.8rem;
+      border-radius: 10px;
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      font-size: 0.92rem;
+      max-width: calc(100vw - 2rem);
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.25);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .overview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-grid,
+      .color-grid,
+      .type-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .header-inner {
+        padding-bottom: 0.65rem;
+      }
+
+      .toc {
+        gap: 0.2rem;
+      }
+
+      .toc a {
+        font-size: 0.84rem;
+        padding: 0.28rem 0.48rem;
+      }
+
+      .logo-grid,
+      .color-grid,
+      .type-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .checkerboard {
+        min-height: 160px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-lockup">
+        <p class="brand-name" id="brandName">Athlete Connections Foundation</p>
+        <p class="brand-tagline" id="brandTagline">Empowering Youth Through Sports, Life Skills &amp; Education.</p>
+      </div>
+      <nav class="toc" aria-label="Table of contents">
+        <a href="#overview">Overview</a>
+        <a href="#logos">Logos</a>
+        <a href="#colors">Colors</a>
+        <a href="#typography">Typography</a>
+        <a href="#layout">Layout</a>
+        <a href="#voice">Voice</a>
+        <a href="#do-nots">Do Nots</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview" aria-labelledby="overview-title">
+      <h2 id="overview-title">Overview</h2>
+      <p class="section-intro">This guide defines the core visual and verbal system for Athlete Connections Foundation. It is designed to be practical for quick execution across web, print, and social touchpoints.</p>
+      <div class="overview-grid">
+        <article class="card">
+          <h3>Brand Summary</h3>
+          <p><strong>Athlete Connections</strong> champions youth development through sport, life skills, and education pathways. Use this guide to maintain consistency and clarity across every public-facing asset.</p>
+          <p class="muted">Tagline: Empowering Youth Through Sports, Life Skills &amp; Education.</p>
+        </article>
+        <article class="card">
+          <h3>Quick Use</h3>
+          <p>Use the logo cards to download approved marks. Use color chips to copy exact hex values. Keep layouts clean, left-aligned, and whitespace-forward.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="logos" aria-labelledby="logos-title">
+      <h2 id="logos-title">Logos</h2>
+      <p class="section-intro">Only use approved logo files. Keep proportions intact and preserve clear space around all marks.</p>
+      <div class="logo-grid">
+        <article class="card">
+          <h3>Primary Logo</h3>
+          <div class="checkerboard">
+            <button class="logo-preview" id="primaryLogoPreview" type="button" aria-label="Download primary logo PNG">
+              <img id="primaryLogo" src="acf-logo-primary.png" alt="Athlete Connections Foundation primary logo" />
+            </button>
+          </div>
+          <span class="file-label" id="primaryFileLabel">acf-logo-primary.png</span>
+          <div class="actions">
+            <button class="btn-primary" type="button" id="downloadPrimaryBtn">Download PNG</button>
+            <button type="button" id="copyPrimaryPathBtn">Copy file path</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Secondary Logo</h3>
+          <div class="checkerboard">
+            <button class="logo-preview" id="secondaryLogoPreview" type="button" aria-label="Download secondary logo PNG">
+              <img id="secondaryLogo" src="acf-logo-secondary.png" alt="Athlete Connections Foundation secondary logo" />
+            </button>
+          </div>
+          <span class="file-label" id="secondaryFileLabel">acf-logo-secondary.png</span>
+          <div class="actions">
+            <button class="btn-primary" type="button" id="downloadSecondaryBtn">Download PNG</button>
+            <button type="button" id="copySecondaryPathBtn">Copy file path</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Logo Integrity</h3>
+          <p>Always export from source files at the final delivery size. Leave breathing room around the mark and place on clean surfaces for legibility.</p>
+          <p class="muted">Tip: Click either logo image to instantly download the PNG file.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="colors" aria-labelledby="colors-title">
+      <h2 id="colors-title">Colors</h2>
+      <p class="section-intro">Use these swatches as the single source of truth in design and production files.</p>
+      <div class="color-grid">
+        <article class="card">
+          <div class="swatch" style="background:#006ba0;"></div>
+          <h3 class="color-meta">Deep Blue</h3>
+          <p class="color-meta muted">Role: Primary</p>
+          <button class="click-chip" type="button" data-copy="#006ba0" aria-label="Copy Deep Blue hex">#006ba0</button>
+          <div class="actions" style="margin-top:0.65rem;">
+            <button type="button" data-copy="#006ba0">Copy hex</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="swatch" style="background:#f37c31;"></div>
+          <h3 class="color-meta">Orange</h3>
+          <p class="color-meta muted">Role: Secondary</p>
+          <button class="click-chip" type="button" data-copy="#f37c31" aria-label="Copy Orange hex">#f37c31</button>
+          <div class="actions" style="margin-top:0.65rem;">
+            <button type="button" data-copy="#f37c31">Copy hex</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="swatch" style="background:#1c1f1e;"></div>
+          <h3 class="color-meta">Charcoal</h3>
+          <p class="color-meta muted">Role: Accent</p>
+          <button class="click-chip" type="button" data-copy="#1c1f1e" aria-label="Copy Charcoal hex">#1c1f1e</button>
+          <div class="actions" style="margin-top:0.65rem;">
+            <button type="button" data-copy="#1c1f1e">Copy hex</button>
+          </div>
+        </article>
+      </div>
+      <ul class="usage-rules">
+        <li>Green is used sparingly.</li>
+        <li>Charcoal dominates.</li>
+        <li>Bone white is canvas.</li>
+      </ul>
+    </section>
+
+    <section id="typography" aria-labelledby="typography-title">
+      <h2 id="typography-title">Typography</h2>
+      <p class="section-intro">Primary font is <strong>Source Sans 3</strong>. Use bold weights for headlines and regular for body copy. Avoid light and condensed styles.</p>
+      <div class="type-grid">
+        <article class="card">
+          <p class="muted">H1</p>
+          <p class="type-sample h1">Building Better Futures</p>
+        </article>
+        <article class="card">
+          <p class="muted">H2</p>
+          <p class="type-sample h2">Youth Through Sport</p>
+        </article>
+        <article class="card">
+          <p class="muted">H3</p>
+          <p class="type-sample h3">Community Connection</p>
+        </article>
+        <article class="card">
+          <p class="muted">Body</p>
+          <p class="type-sample body">Athlete Connections Foundation develops confident young leaders through athletic participation, mentorship, and life readiness programs.</p>
+        </article>
+        <article class="card">
+          <p class="muted">Caption</p>
+          <p class="type-sample caption">Caption text is used for support labels and metadata at smaller sizes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="layout" aria-labelledby="layout-title">
+      <h2 id="layout-title">Layout &amp; Grid</h2>
+      <ul>
+        <li>Use a grid-based structure.</li>
+        <li>Maintain generous whitespace.</li>
+        <li>Keep content left aligned for readability.</li>
+        <li>A vertical line/divider motif may be used to separate hierarchy.</li>
+      </ul>
+      <div class="layout-example" role="img" aria-label="Example of divider line between headline and subhead">
+        <div class="divider" aria-hidden="true"></div>
+        <div>
+          <h3 style="margin:0;">Empowering Youth Through Sports</h3>
+          <p class="muted" style="margin:0.35rem 0 0;">Practical mentorship and education programs create pathways from potential to progress.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice" aria-labelledby="voice-title">
+      <h2 id="voice-title">Voice</h2>
+      <article class="card voice-card">
+        <p><strong>Tone:</strong> Clear, encouraging, and credible. Speak with confidence while staying human and action-oriented.</p>
+        <p><strong>Message style:</strong> Lead with impact, ground claims in real outcomes, and keep language direct and accessible to families, partners, and youth.</p>
+      </article>
+    </section>
+
+    <section id="do-nots" aria-labelledby="do-nots-title">
+      <h2 id="do-nots-title">Do Nots</h2>
+      <ul>
+        <li>No gradients.</li>
+        <li>No shadows.</li>
+        <li>No rotation or distortion of logos.</li>
+        <li>No unapproved colors.</li>
+        <li>No busy decorative marks.</li>
+      </ul>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // Config: replace these paths/values as needed.
+    const LETTERMARK_SRC = "./assets/acf-logo-primary.png";
+    const WORDMARK_SRC = "./assets/acf-logo-secondary.png";
+    const FAVICON_SRC = "./assets/acf-logo-secondary.png";
+    const BRAND = {
+      name: "Athlete Connections Foundation",
+      tagline: "Empowering Youth Through Sports, Life Skills & Education."
+    };
+
+    const toastEl = document.getElementById("toast");
+    let toastTimer;
+
+    function showToast(message) {
+      toastEl.textContent = message;
+      toastEl.classList.add("show");
+      window.clearTimeout(toastTimer);
+      toastTimer = window.setTimeout(() => {
+        toastEl.classList.remove("show");
+      }, 1400);
+    }
+
+    async function copyToClipboard(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        showToast(`Copied ${text}`);
+      } catch (err) {
+        const temp = document.createElement("textarea");
+        temp.value = text;
+        temp.setAttribute("readonly", "");
+        temp.style.position = "fixed";
+        temp.style.left = "-9999px";
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand("copy");
+        document.body.removeChild(temp);
+        showToast(`Copied ${text}`);
+      }
+    }
+
+    async function downloadImage(src, filename) {
+      try {
+        const res = await fetch(src, { mode: "cors" });
+        if (!res.ok) throw new Error("Download failed");
+        const blob = await res.blob();
+        const blobUrl = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = blobUrl;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(blobUrl);
+        showToast(`Downloading ${filename}`);
+      } catch (err) {
+        const a = document.createElement("a");
+        a.href = src;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        showToast(`Downloading ${filename}`);
+      }
+    }
+
+    function setBrandConfig() {
+      document.getElementById("brandName").textContent = BRAND.name;
+      document.getElementById("brandTagline").textContent = BRAND.tagline;
+
+      const primaryLogo = document.getElementById("primaryLogo");
+      const secondaryLogo = document.getElementById("secondaryLogo");
+      primaryLogo.src = LETTERMARK_SRC;
+      secondaryLogo.src = WORDMARK_SRC;
+
+      document.getElementById("primaryFileLabel").textContent = LETTERMARK_SRC;
+      document.getElementById("secondaryFileLabel").textContent = WORDMARK_SRC;
+
+      if (FAVICON_SRC && FAVICON_SRC !== "PASTE_HERE") {
+        const link = document.createElement("link");
+        link.rel = "icon";
+        link.href = FAVICON_SRC;
+        document.head.appendChild(link);
+      }
+    }
+
+    function bindEvents() {
+      document.getElementById("downloadPrimaryBtn").addEventListener("click", () => {
+        downloadImage(LETTERMARK_SRC, LETTERMARK_SRC.split("/").pop() || "primary-logo.png");
+      });
+
+      document.getElementById("downloadSecondaryBtn").addEventListener("click", () => {
+        downloadImage(WORDMARK_SRC, WORDMARK_SRC.split("/").pop() || "secondary-logo.png");
+      });
+
+      document.getElementById("copyPrimaryPathBtn").addEventListener("click", () => {
+        copyToClipboard(LETTERMARK_SRC);
+      });
+
+      document.getElementById("copySecondaryPathBtn").addEventListener("click", () => {
+        copyToClipboard(WORDMARK_SRC);
+      });
+
+      document.getElementById("primaryLogoPreview").addEventListener("click", () => {
+        downloadImage(LETTERMARK_SRC, LETTERMARK_SRC.split("/").pop() || "primary-logo.png");
+      });
+
+      document.getElementById("secondaryLogoPreview").addEventListener("click", () => {
+        downloadImage(WORDMARK_SRC, WORDMARK_SRC.split("/").pop() || "secondary-logo.png");
+      });
+
+      document.querySelectorAll("[data-copy]").forEach((node) => {
+        node.addEventListener("click", () => {
+          copyToClipboard(node.getAttribute("data-copy") || "");
+        });
+      });
+    }
+
+    setBrandConfig();
+    bindEvents();
+  </script>
+</body>
+</html>
